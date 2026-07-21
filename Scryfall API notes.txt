@@ -1,0 +1,46 @@
+Scryfall API is free - REST-like API for ingesting card data
+	API is available at https://api.scryfall.com
+	Requests are only served over HTTPS using TLS 1.2 or better, not honored over plaintext HTTP
+	UTF-8 Character Encoding for all responses, many fields include characters not in ASCII range
+	Endpoints (esp for card data) have specific hard rate limits
+	
+Required Headers
+All HTTP requests to api.scryfall.com must include a User-Agent header and an Accept header.
+
+Your User-Agent header must be accurate to your usage context. If you are running a script or app, the header should be the name of your application, such as MTGExampleApp/1.0 or the current relevant version. Do not allow HTTP libraries to choose the header for you.
+
+If you are accessing the API via on-page web browser JavaScript, keep the browser’s User-Agent intact.
+
+The Accept header must be present, but you can provide a generic preference. For example, both of these are okay: Accept: */* and Accept: application/json;q=0.9,*/*;q=0.8.
+
+When using Scryfall data, you must adhere to the following guidelines:
+
+You may not use Scryfall logos or use the Scryfall name in a way that implies Scryfall has endorsed you, your work, or your product.
+You may not “paywall” access to Scryfall data. You may not require anyone to make payments, take surveys, agree to subscriptions, rate your content, join chat servers, or follow channels in exchange for access to Scryfall data. If you have an account system, end-users should be able to access card data anonymously or with free accounts.
+You may not use Scryfall data to create new games, or to imply the information and images are from any other game besides Magic: The Gathering.
+You may not simply repackage, republish, or proxy Scryfall data. Your software must create additional value for end-users.
+When using images from Scryfall, you must adhere to the following guidelines:
+
+Do not cover, crop, or clip off the copyright or artist name on card images.
+Do not distort, skew, or stretch card images.
+Do not blur, sharpen, desaturate, or color-shift card images.
+Do not add your own watermarks, stamps, or logos to card images.
+Do not place card images in a way that implies someone other than Wizards of the Coast created the card or that it is from another game besides Magic: The Gathering.
+When using the art_crop, list the artist name and copyright elsewhere in the same interface presenting the art crop, or use the full card image elsewhere in the same interface. Users should be able to identify the artist and source of the image somehow.
+Repeated mishandling or misrepresentation of data or images in your project may result in Scryfall restricting or blocking your API access.
+
+
+
+REQUEST NOTES:
+json
+csv
+text
+image
+file
+
+image and file formats return an HTTP 302 redirect directly to an image file/downloadable item
+
+image requests can have version params (small, normal, large, png, art_crop, border_crop) default is large
+
+
+Scryfall represents multi-face cards as a single object with a card_faces array describing the distinct faces

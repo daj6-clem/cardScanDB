@@ -1,0 +1,34 @@
+Scryfall API is free
+
+pytesseract library for Google OCR can read text from images
+
+1. Camera
+2. OCR (extract card name)
+3. Scryfall API returns information
+4. Insert into SQLite/MySQL/Postgres
+
+If you have a card name, you can throw that to Scryfall API and call
+https://api.scryfall.com/cards/named?exact=Namey+Namer
+and it will return a huge JSON object w everything in it
+
+
+TECH STACK
+Frontend - React + TypeScript
+Backend - Node.js w Express
+Database - PostgreSQL
+OCR - Pytesseract
+
+COMPUTER VISION: OpenCV
+Find card
+Crop card to title
+Extract card title w OCR
+Throw title string to Scryfall to get info
+Toss info into Postgres database
+
+Scryfall has search/name/random/collection/manifest/method rates. So whenever we ping for a card, maybe we save its info/prices
+
+WUBRGC for white, blue, black, red, green, and colorless
+
+/symbology gives all the symbols
+
+Scryfall represents multi-face cards as a single object with a card_faces array describing the distinct faces
