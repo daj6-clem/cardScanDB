@@ -6,7 +6,7 @@ pytesseract.pytesseract.tesseract_cmd = (
     r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 )
 
-image = Image.open("LBolt Test black text.jpg")
+image = Image.open("fPush test white text.jpg")
 
 data = pytesseract.image_to_data(
     image,
@@ -17,5 +17,5 @@ data = pytesseract.image_to_data(
 for i, text in enumerate(data["text"]):
     confidence = int(data["conf"][i])
 
-    if confidence > 50 and text.strip():
+    if confidence > 10 and text.strip():
         print(text, confidence)
