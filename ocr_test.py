@@ -9,7 +9,7 @@ pytesseract.pytesseract.tesseract_cmd = (
 
 image = Image.open("fPush test black text.jpg")
 
-grayed = ImageOps.graysclae(image)
+grayed = ImageOps.grayscale(image)
 
 data = pytesseract.image_to_data(
     grayed,
