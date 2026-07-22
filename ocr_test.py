@@ -1,3 +1,6 @@
+#TODO: We need to change the function to only save the highest score/scores and the settings involved
+
+
 import pytesseract
 from PIL import Image
 from PIL import ImageOps
